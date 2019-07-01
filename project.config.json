@@ -1,0 +1,13 @@
+{
+  "description": "a wepy seed",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram",
+  "appid": "wx3749f248387d9fe9",
+  "projectname": "wepy-seed",
+  "miniprogramRoot": "./dist"
+}

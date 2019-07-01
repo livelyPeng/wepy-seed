@@ -1,0 +1,15 @@
+<style lang='less'>
+</style>
+<template>
+  <view>
+    <view>{{ titles }}</view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  export default class titles extends wepy.component {
+    data = {
+      titles: '我是组件'
+    }
+  }
+</script>

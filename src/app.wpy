@@ -1,0 +1,51 @@
+<style lang="less">
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+</style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+
+// 入口文件app.wpy中所声明的小程序实例继承自wepy.app类，包含一个config属性和其它全局属性、方法、事件。
+// 其中config属性对应原生的app.json文件，build编译时会根据config属性自动生成app.json文件，
+// 如果需要修改config中的内容，请使用微信提供的相关API。
+
+console.log('author: penglei, 博客站www.plblog.cn， wepy小程序种子')
+// 该项目种子特别注重规范，引入了eslint代码检测，在写法上一定要规范
+// eslint代码检测，使用它可以避免低级错误和统一代码的风格
+// 种子采用模块化写法
+export default class extends wepy.app {
+  config = {
+    pages: [
+      'pages/homeModule/index'
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTitleText: 'WeChat',
+      navigationBarTextStyle: 'black'
+    }
+  }
+
+  globalData = {
+    userInfo: null
+  }
+
+  constructor () {
+    super()
+    // this.use('requestfix'); this.use('promisify'); 第一个是解决了同时发起多个request时候的异常修复
+    // 第二个是开启promise await async等功能的必需代码
+    this.use('requestfix')
+    this.use('promisify')
+  }
+  onLaunch() {
+  }
+}
+</script>
